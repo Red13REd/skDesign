@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Form} from "./Form";
+import {AppBlock, Container, Logo, Text, TextContainer, TitleH2} from "./components/styledItems";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <AppBlock>
+            <Container>
+                <TextContainer>
+                    <Logo/>
+                    <TitleH2>
+                        Оставьте заявку и станьте частью нашей команды
+                    </TitleH2>
+
+                    <Text>
+                        <p>
+                            Компания SK Design приглашает к взаимовыгодному сотрудничеству креативных дизайнеров,
+                            архитекторов и декораторов,<br/> дизайн-бюро и интерьерные студии — все, кто дизайн интерьера
+                            сделали
+                            своим призванием.
+                        </p>
+                        <p>
+                            Партнерство мы видим как доверительные отношения, основанные на честности реализации бизнес
+                            идей
+                            в сфере создания и продаж <br/> современной, качественной, удобной, функциональной и эксклюзивной
+                            мебели.
+                        </p>
+                        <p>
+                            Ознакомиться с проектами можете в нашем портфолио. Если Вы оформляете интерьеры жилых или
+                            коммерческих помещений — мы с <br/> радостью поможем Вам: составим уникальные условия
+                            сотрудничества,
+                            предоставим 3D модели (уточняйте у менеджеров) и <br/> разработаем коммерческое предложение к
+                            Вашему
+                            проекту или изображениям.
+                        </p>
+                    </Text>
+                </TextContainer>
+                <Form/>
+            </Container>
+        </AppBlock>
+    );
 }
 
 export default App;
