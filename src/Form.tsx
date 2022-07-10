@@ -197,16 +197,17 @@ export const Form = () => {
                 onChangeText={setOrganizationName}
             />
             <ShowDop onClick={() => setShow(!show)}>
-                <Icon bottom={'-3px'}
+                <Icon bottom={'6px'}
                       right={'-13px'}
                       pointerEvents={'auto'}
+                      show={!show}
                 />
                 {show ? 'Скрыть дополнительные поля' : 'Показать дополнительные поля'}
             </ShowDop>
             {show ? <>
                 <Input
                     value={formRecipient}
-                    labelValue='Получатель *'
+                    labelValue='Получатель'
                     placeholder='ФИО'
                     width='380px'
                     onChangeText={setFormRecipient}
@@ -221,7 +222,7 @@ export const Form = () => {
             </> : null}
             <div style={{'position': 'relative'}}>
                 <Button
-                    disabled={form.isLoad === LoadingStatusType.active}
+                    disabled={form.isLoad === LoadingStatusType.active || buttonDisable}
                     onClick={setDataRedux}
                     width='380px'>{form.isLoad !== LoadingStatusType.active && 'Отправить заявку'}</Button>
                 {form.isLoad === LoadingStatusType.active && <Rolling/>}

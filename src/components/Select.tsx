@@ -65,7 +65,7 @@ export const Select: React.FC<SelectPropsType> = (props) => {
                 onFocusHandler={onSelectHandler}
                 onBlurCheckName={onBlurCheckName}
             />
-            <Icon/>
+            <Icon show={show}/>
             {!show ?
                 <>
                     <Ul onBlur={onSelectHandler}>
@@ -90,7 +90,7 @@ export const Select: React.FC<SelectPropsType> = (props) => {
 
 const Ul = styled.ul`
   margin: 0;
-  top: 59px;
+  top: 60px;
   left: 0;
   z-index: 4;
   position: absolute;
@@ -139,11 +139,12 @@ const StyledOption = styled.li`
 
 export const Icon = styled.div<IconType>`
   position: absolute;
-  width: 17.4px;
-  height: 17px;
+  width: 11px;
+  height: 6px;
   z-index: 1;
-  bottom: ${props => props.bottom ? props.bottom : '15px'};
+  bottom: ${props =>  props.bottom ? props.bottom: '25px'};
   right: ${props => props.right ? props.right : '-190px;'};
+  transform: ${props => props.show ? '' : 'rotateX(180deg)'};
   cursor: pointer;
   pointer-events: ${props => props.pointerEvents ? props.pointerEvents : 'none;'};
   background-image: url('${icon}');
@@ -162,5 +163,6 @@ const Modal = styled.div`
 type IconType = {
     bottom?: string
     right?: string
-    pointerEvents?: string;
+    pointerEvents?: string
+    show: boolean
 }
