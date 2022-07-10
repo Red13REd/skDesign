@@ -100,7 +100,6 @@ const Ul = styled.ul`
   padding: 2px;
 
   width: 135px;
-  height: 130px;
 
   background: #FFFFFF;
   border: 2px solid #E3E3E3;
@@ -120,7 +119,7 @@ const StyledOption = styled.li`
   gap: 10px;
   cursor: pointer;
   width: 131px;
-  height: 30px;
+  height: 35px;
   border-bottom: 2px solid #E3E3E3;
   z-index: 4;
 

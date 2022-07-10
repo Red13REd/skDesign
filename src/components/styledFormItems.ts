@@ -12,7 +12,6 @@ export const FormContainer = styled.form`
   right: 0;
   width: 440px;
 
-  transition: all 1s ease-out;
   background: #FFFFFF;
   border-radius: 8px;
 

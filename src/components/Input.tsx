@@ -11,9 +11,7 @@ type InputPropsType = DefaultInputPropsType & {
     onBlurHandler?: () => void
     onBlurCheckName?: (name: React.FocusEvent<HTMLInputElement | HTMLSelectElement> ) => void
     error?: boolean
-    emailError?: boolean
-    passwordError?: boolean
-    comparePassword?: boolean
+    textError?: string
     value?: string
     sign?: string
     labelValue?: string
