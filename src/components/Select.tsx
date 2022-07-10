@@ -114,7 +114,7 @@ const Ul = styled.ul`
 const StyledOption = styled.li`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   padding: 5px 15px;
   gap: 10px;
   cursor: pointer;

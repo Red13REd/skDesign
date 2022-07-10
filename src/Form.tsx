@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, FormContainer, InputWrapper, Rolling, ShowDop} from './components/styledFormItems';
 import {Input} from './components/Input';
 import {Icon, Select} from "./components/Select";
 import {useAppDispatch, useCustomSelector} from "./store/store";
 import {JsonTC, setData} from "./store/formReducer";
 import {LoadingStatusType} from "./store/enums";
+import {Loader} from "./components/Loader";
 
 const cities = [
     {
@@ -64,7 +65,6 @@ export const Form = () => {
 
     const [show, setShow] = useState<boolean>(false)
 
-
     const buttonDisable = errorFormUserName
         || errorFormPhoneNumber
         || errorFormEmailValue
@@ -81,6 +81,21 @@ export const Form = () => {
         setOrganizationName('')
         setFormRecipient('')
         setFormHowDidYouKnow('')
+
+        setFormUserNameDirty(false)
+        setFormPhoneNumberDirty(false)
+        setEmailValueDirty(false)
+        setLinkProfileDirty(false)
+        setCityDirty(false)
+
+
+        setTimeout(() => {
+            setErrorFormUserName(true)
+            setErrorFormPhoneNumber(true)
+            setErrorFormEmailValue(true)
+            setErrorFormLinkProfile(true)
+            setErrorFormCity(true)
+        }, 2000)
     }
 
 
@@ -222,10 +237,10 @@ export const Form = () => {
             </> : null}
             <div style={{'position': 'relative'}}>
                 <Button
-                    disabled={form.isLoad === LoadingStatusType.active || buttonDisable}
+                    disabled={buttonDisable}
                     onClick={setDataRedux}
                     width='380px'>{form.isLoad !== LoadingStatusType.active && 'Отправить заявку'}</Button>
-                {form.isLoad === LoadingStatusType.active && <Rolling/>}
+                {form.isLoad === LoadingStatusType.active && <Loader/>}
             </div>
         </FormContainer>
     );
