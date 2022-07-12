@@ -24,7 +24,7 @@ export const formReducer = (state: StateType = initialState, actions: ActionsTyp
 };
 
 
-export const setData = (data: StateType) => ({type: 'FORM-REDUCER/SET-DATA', data})
+export const setData = (data: StateType) => ({type: 'FORM-REDUCER/SET-DATA', data} as const)
 
 
 export const JsonTC = (): AppThunk => (dispatch, getState) => {
